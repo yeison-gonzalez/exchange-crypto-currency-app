@@ -1,17 +1,20 @@
-import { ITicker } from "@/components"
+// Models
+import { ITicker } from "@/models/Ticker";
+// Constants
+import { SEPARATE_PARAMETERS } from "@/constants/Symbols";
 
-export const useGetIdsBySymbol = (): {
-  getFirstParamFromUrl: (param: string) => string;
+export const useTransformSymbol = (): {
   handleGetIds: (cryptos: ITicker[], labels: string) => string;
 } => {
-  const getFirstParamFromUrl = (param: string): string => {
-    const options = param?.split('%2C')
-    return options[0] 
-  }
-
+  /**
+   * Action to get ids from symbols
+   * @param {ITicker[]} cryptos - Crypto list
+   * @param {string} labels - Symbols from coins
+   * @returns {string} - String with ids
+   */
   const handleGetIds = (cryptos: ITicker[], labels: string): string => {
     const listId: string[] = []
-    const getOptions = labels?.split('%2C')
+    const getOptions = labels?.split(SEPARATE_PARAMETERS)
 
     if (getOptions?.length && cryptos?.length) {
         getOptions?.map(option => {
@@ -27,7 +30,6 @@ export const useGetIdsBySymbol = (): {
   }
 
   return {
-    getFirstParamFromUrl,
     handleGetIds
   }
 }

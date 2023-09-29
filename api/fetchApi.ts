@@ -1,9 +1,6 @@
-import { IRequest, ITicker } from "@/components"
-import { IMarket } from "@/components/MarketList"
-
-interface IRequestMarket { 
-    id: string
-}
+// Models
+import { IRequestMarket, IMarket } from "@/models/Market"
+import { IRequest, ITicker } from "@/models/Ticker"
 
 /**
  * Get all tickers

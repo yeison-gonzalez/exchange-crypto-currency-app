@@ -1,7 +1,15 @@
+// Libraries
 import React from 'react'
+// Utils
 import { handleIsPositive } from '@/utils/Validate'
-import { ITicker } from '.'
+// Models
+import { ITicker } from '@/models/Ticker'
 
+/**
+ * Interface props card detail coin
+ * @constructor
+ * @param {ITicker} data - Data from coin
+ */
 interface ICardDetailCoinProps {
   data: ITicker
 }

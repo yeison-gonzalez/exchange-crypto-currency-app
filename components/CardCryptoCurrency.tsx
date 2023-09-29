@@ -1,18 +1,27 @@
+// Libraries
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { ITicker } from '.'
-import { handleIsPositive } from '@/utils/Validate'
 import { usePathname } from 'next/navigation'
-import { useGetRouteMarkets } from '@/hooks'
+// Models
+import { ITicker } from '@/models/Ticker'
+// Utils
+import { handleIsPositive } from '@/utils/Validate'
+// Hooks
+import { useValidateRoutes } from '@/hooks'
 
+/**
+ * Interface props card crypto currency
+ * @constructor
+ * @param {ITicker} data - Data detail from coin
+ */
 interface ICardCryptoCurrencyProps {
   data: ITicker
 }
 
 export const CardCryptoCurrency: React.FC<ICardCryptoCurrencyProps> = ({ data }) => {
   const pathname = usePathname();
-  const { getRouteMarkets } = useGetRouteMarkets();
+  const { getRouteMarkets } = useValidateRoutes();
 
   return (
     <div className='flex flex-row bg-zinc-700 border-zinc-700 border rounded-3xl shadow p-6 w-max'>

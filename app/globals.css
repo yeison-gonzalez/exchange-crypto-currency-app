@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  padding-top: 1rem;
-  background: rgb(54,54,54);
+  @apply pt-4 bg-zinc-700;
   background: linear-gradient(180deg, rgba(54,54,54,1) 0%, rgba(83,83,83,0.8687850140056023) 100%);
 }

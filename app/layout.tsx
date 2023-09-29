@@ -1,26 +1,23 @@
 // Libraries
-import type { Metadata } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+// Image
 import bitcoin from '../public/bitcoin.png'
+// Components
+import { ListExchanges } from '@/components'
 // Styles
 import './globals.css'
-import { ListExchanges } from '@/components'
-import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Exchange crypto currency',
-  description: 'App to exchange crypto currency',
+  description: 'App to get crypto currency by USD',
 }
 
-export default function RootLayout({
-  children,
-}: {
-    children: React.ReactNode
-  }): React.ReactElement {
-
+export default function RootLayout({ children }: { children: React.ReactNode }): React.ReactElement {
   return (
     <html lang="en">
       <body className={inter.className}>

@@ -1,14 +1,27 @@
-import MarketList from '@/components/MarketList';
+// Libraries
 import React from 'react'
+// Components
+import { MarketList } from '@/components';
 
-const MarketsPage: React.FC<{ params: { markets: string } }> = ({ params }) => {
-    const { markets } = params;
+/**
+ * Interface props markets page
+ * @constructor
+ * @param { markets: string } params - Params page
+ */
+interface IMarketsPageProps {
+  params: {
+    markets: string
+  }
+} 
 
-    return (
-        <div>
-            <MarketList markets={markets} />
-        </div>
-    )
+const MarketsPage: React.FC<IMarketsPageProps> = ({ params }) => {
+  const { markets } = params;
+
+  return (
+    <div>
+      <MarketList markets={markets} />
+    </div>
+  )
 }
 
 export default MarketsPage

@@ -1,3 +1,4 @@
+// Libraries
 import Link from 'next/link'
 
 export default function Custom404(): JSX.Element {
