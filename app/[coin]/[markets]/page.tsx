@@ -6,7 +6,7 @@ const MarketsPage: React.FC<{ params: { markets: string } }> = ({ params }) => {
 
     return (
         <div>
-            <MarketList id={markets} />
+            <MarketList markets={markets} />
         </div>
     )
 }

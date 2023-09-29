@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ITicker } from '.'
 import { handleIsPositive } from '@/utils/Validate'
 import { usePathname } from 'next/navigation'
+import { useGetRouteMarkets } from '@/hooks'
 
 interface ICardCryptoCurrencyProps {
   data: ITicker
@@ -11,6 +12,7 @@ interface ICardCryptoCurrencyProps {
 
 export const CardCryptoCurrency: React.FC<ICardCryptoCurrencyProps> = ({ data }) => {
   const pathname = usePathname();
+  const { getRouteMarkets } = useGetRouteMarkets();
 
   return (
     <div className='flex flex-row bg-zinc-700 border-zinc-700 border rounded-3xl shadow p-6 w-max'>
@@ -34,7 +36,7 @@ export const CardCryptoCurrency: React.FC<ICardCryptoCurrencyProps> = ({ data })
         <label className={`text-center ${handleIsPositive(data?.percent_change_1h) ? 'text-red-500' : 'text-green-500'} font-normal w-full`}>{data?.percent_change_1h}%</label>
       </div>
       <div className='flex flex-col justify-center items-center w-28'>
-        <Link href={`${pathname}/${data?.id}`}>
+        <Link href={`${getRouteMarkets(pathname, data?.symbol)}`}>
           <button className='bg-green-500 hover:bg-green-700 text-white text-xs font-bold py-2 px-4 rounded-full inline-flex items-center gap-x-2'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />

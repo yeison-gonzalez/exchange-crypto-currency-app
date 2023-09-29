@@ -39,7 +39,7 @@ export const SelectMultiSearch: React.FC<ISelectMultiSearchProps> = ({ name, def
             current.delete("coin")
             return router.push("/");
         } else {
-            const formatOptions = selectedOptions?.map(selectedOption => selectedOption.value)?.toString()
+            const formatOptions = selectedOptions?.map(selectedOption => selectedOption.label)?.toString()
             current.set("coin", formatOptions)
         }
         
