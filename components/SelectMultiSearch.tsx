@@ -1,7 +1,7 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Select, { MultiValue } from 'react-select';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 interface IOption {
     value: string
@@ -30,7 +30,15 @@ const stylesControl = {
 
 export const SelectMultiSearch: React.FC<ISelectMultiSearchProps> = ({ name, defaultValue = [], options }) => {
     const router = useRouter();
+    const pathname = usePathname();
     const searchParams = useSearchParams();
+    const [selectedOptions, setSelectedOptions] = useState<MultiValue<IOption>>([]);
+
+    useEffect(() => {
+        if (pathname === '/') {
+            setSelectedOptions([]);
+        }
+    }, [pathname])
 
     const onSelect = (selectedOptions: MultiValue<IOption>): void => {
         const current = new URLSearchParams(Array.from(searchParams.entries()));
@@ -44,6 +52,7 @@ export const SelectMultiSearch: React.FC<ISelectMultiSearchProps> = ({ name, def
         }
         
         const query = current.get("coin");
+        setSelectedOptions(selectedOptions);
         router.push(`/${query}`);
     };
     
@@ -51,6 +60,7 @@ export const SelectMultiSearch: React.FC<ISelectMultiSearchProps> = ({ name, def
         <Select
             instanceId='select-search'
             defaultValue={defaultValue}
+            value={selectedOptions}
             isMulti
             name={name}
             options={options}

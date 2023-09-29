@@ -2,17 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background-start-rgb: 54, 54, 54;
-  --background-end-rgb: 54, 54, 54;
-}
-
 body {
-  padding: 2rem;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding-top: 1rem;
+  background: rgb(54,54,54);
+  background: linear-gradient(180deg, rgba(54,54,54,1) 0%, rgba(83,83,83,0.8687850140056023) 100%);
 }

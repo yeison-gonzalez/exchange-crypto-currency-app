@@ -17,7 +17,9 @@ export const useGetIdsBySymbol = (): {
         getOptions?.map(option => {
             const currentCrypto = cryptos?.find((cryto => cryto.symbol === option))
             if (currentCrypto) {
-                listId.push(currentCrypto.id)
+              listId.push(currentCrypto.id)
+            } else {
+              return '';
             }
         })
     }

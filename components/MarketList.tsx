@@ -1,12 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import MarketCard from './MarketCard'
-import { ITicker } from '.'
 import { useGetIdsBySymbol } from '@/hooks'
-
-interface IRequestMarket { 
-    id: string
-}
+import { fetchGetAllTickers, fetchGetMarketByCoin } from '@/api/fetchApi'
 
 interface IMarketListProps {
     markets: string
@@ -23,27 +19,10 @@ export interface IMarket {
     time: number
 }
 
-/**
- * Get all tickers
- * @returns Promise<ITicker[]>
- */
-const fetchGetAllTickers = async (): Promise<ITicker[]> => {
-  return fetch('https://api.coinlore.net/api/tickers/?limit=10')
-    .then(res => res.json())
-    .then(res => res.data)
-}
-
-const fetchGetMarketByCoin = async ({ id }: IRequestMarket): Promise<IMarket[]> => {
-    return fetch(`https://api.coinlore.net/api/coin/markets/?id=${id}`)
-        .then(res => res.json())
-        .then(res => res.slice(0,5))
-}
-
 const MarketList: React.FC<IMarketListProps> = async ({ markets }) => {
-    const { getFirstParamFromUrl, handleGetIds } = useGetIdsBySymbol()
-    const firtParam = getFirstParamFromUrl(markets)
+    const { handleGetIds } = useGetIdsBySymbol()
     const cryptos = await fetchGetAllTickers()
-    const optionsMarkets = await fetchGetMarketByCoin({ id: handleGetIds(cryptos, firtParam) })
+    const optionsMarkets = await fetchGetMarketByCoin({ id: handleGetIds(cryptos, markets) })
 
     return (
         <div className='flex flex-col gap-y-6'>
@@ -51,7 +30,7 @@ const MarketList: React.FC<IMarketListProps> = async ({ markets }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-7 h-7 fill-orange-400 mr-2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                 </svg>
-                <h3 className='text-white font-bold text-xl'>Markets ({firtParam || markets})</h3>
+                <h3 className='text-white font-bold text-xl'>Markets ({ markets })</h3>
 
                 <Link href='/'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 stroke-red-600 absolute top-2 right-2">
