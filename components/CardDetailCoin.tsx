@@ -16,7 +16,7 @@ interface ICardDetailCoinProps {
 
 export const CardDetailCoin: React.FC<ICardDetailCoinProps> = ({ data }) => {
   return (
-    <div className="w-auto p-3 flex flex-col bg-zinc-700 rounded-2xl">
+    <div className="w-40 p-3 flex flex-col bg-zinc-700 rounded-2xl">
       <div className='flex flex-row justify-between mb-3 gap-x-4'>
           <div className='flex flex-col justify-center'>
             <label className='text-base font-semibold text-white'>{data.symbol}</label>

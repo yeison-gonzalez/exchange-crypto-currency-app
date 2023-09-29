@@ -26,7 +26,7 @@ export const SummaryCoin: React.FC<ISummaryCoinProps> = async ({ params }) => {
   const details = await fetchGetTickerDetail({ coin: handleGetIds(cryptos, coin) })
 
   return details?.length ? (
-    <div className='flex flex-row w-max bg-black border-black border gap-3 rounded-3xl p-3'>
+    <div className='flex flex-row flex-wrap w-max max-w-sm xs:w-auto xs:max-w-min bg-black border-black border gap-3 justify-center rounded-3xl p-5 self-center'>
       {details?.map(detail => (
         <CardDetailCoin key={detail.id} data={detail} />
       ))}

@@ -21,7 +21,7 @@ export const useValidateRoutes = (): { getRouteMarkets: (currentPath: string, sy
       if (onlyBase) {
         return `/${symbol}/${symbol}`
       } else {
-        if (optionsMarket.length === OPTION_URL.UNIC_MODULE_PARAM && options.length > OPTION_URL.UNIC_MODULE_PARAM) { 
+        if (optionsMarket.length === OPTION_URL.UNIC_MODULE_PARAM && options.length >= OPTION_URL.UNIC_MODULE_PARAM) { 
             return `/${optionsMarket[OPTION_URL.FIRST_MODULE_PARAM]}/${symbol}`
         } else if (optionsMarket.length <= OPTION_URL.SEVERAL_PARAMS_COIN && existCurrentSymbol) {
             return currentPath
