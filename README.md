@@ -1,5 +1,5 @@
 # 🚀💰 USD to Cryptocurrency Converter
-![React](https://img.shields.io/badge/-React-20232a?logo=react&style=for-the-badge) ![Typescript](https://img.shields.io/badge/-Typescript-1572B6?logo=typescript&style=for-the-badge)
+![Next.js](https://img.shields.io/badge/-Next.js-20232A?logo=next.js&style=for-the-badge) ![TypeScript](img.shields.io/badge/-TypeScript-3178C6?logo=typescript&style=for-the-badge&color=white) ![React](img.shields.io/badge/-React-61DAFB?logo=react&style=for-the-badge&color=white) ![Eslint](https://img.shields.io/badge/-Eslint-4B32C3?logo=eslint&style=for-the-badge) ![React Testing Library](https://img.shields.io/badge/-React%20Testing%20Library-E33332?logo=javascript&style=for-the-badge) ![Jest](https://img.shields.io/badge/-Jest-C21325?logo=jest&style=for-the-badge) ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?logo=tailwind-css&style=for-the-badge&color=white)
 
 Welcome to the USD to Cryptocurrency Converter project! With this application, you can see the instant conversion from US dollars (USD) to your favorite cryptocurrencies. This application is built using modern technologies like Next.js 13, TypeScript, React, Eslint, React Testing Library with Jest, and Tailwind CSS. Keep reading to learn how to install, run, and contribute to this exciting project!
 
@@ -44,16 +44,5 @@ To ensure everything is working as expected, we've included unit tests in this p
 ```bash
 npm run test
 ```
-
-## 📋 Technologies Used
-
-- ![Next.js](https://img.shields.io/badge/-Next.js-20232A?logo=next.js&style=for-the-badge) 13
-- ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?logo=typescript&style=for-the-badge)
-- ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&style=for-the-badge)
-- ![Eslint](https://img.shields.io/badge/-Eslint-4B32C3?logo=eslint&style=for-the-badge)
-- ![React Testing Library](https://img.shields.io/badge/-React%20Testing%20Library-E33332?logo=testing-library&style=for-the-badge)
-- ![Jest](https://img.shields.io/badge/-Jest-C21325?logo=jest&style=for-the-badge)
-- ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?logo=tailwind-css&style=for-the-badge)
-
 
 Thank you! 💪✨
