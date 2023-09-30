@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀💰 USD to Cryptocurrency Converter
+![React](https://img.shields.io/badge/-React-20232a?logo=react&style=for-the-badge) ![Typescript](https://img.shields.io/badge/-Typescript-1572B6?logo=typescript&style=for-the-badge)
 
-## Getting Started
+Welcome to the USD to Cryptocurrency Converter project! With this application, you can see the instant conversion from US dollars (USD) to your favorite cryptocurrencies. This application is built using modern technologies like Next.js 13, TypeScript, React, Eslint, React Testing Library with Jest, and Tailwind CSS. Keep reading to learn how to install, run, and contribute to this exciting project!
 
-First, run the development server:
+## 🏗️ Installation
+
+Before getting started, make sure you have Node.js v(18.18.0) and npm installed on your machine. Then follow these simple steps:
+
+1. Clone this repository on your local machine:
+
+```bash
+git clone https://github.com/YourUsername/USD-to-Cryptocurrency.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd USD-to-Cryptocurrency
+```
+
+3. Install project dependencies using npm:
+
+```bash
+npm install
+```
+
+## 🚀 Execution
+
+You are about to run the application! Simply follow these steps:
+
+1. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Running Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To ensure everything is working as expected, we've included unit tests in this project. You can run these tests using the following command:
 
-## Learn More
+```bash
+npm run test
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📋 Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- ![Next.js](https://img.shields.io/badge/-Next.js-20232A?logo=next.js&style=for-the-badge) 13
+- ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?logo=typescript&style=for-the-badge)
+- ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&style=for-the-badge)
+- ![Eslint](https://img.shields.io/badge/-Eslint-4B32C3?logo=eslint&style=for-the-badge)
+- ![React Testing Library](https://img.shields.io/badge/-React%20Testing%20Library-E33332?logo=testing-library&style=for-the-badge)
+- ![Jest](https://img.shields.io/badge/-Jest-C21325?logo=jest&style=for-the-badge)
+- ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?logo=tailwind-css&style=for-the-badge)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you! 💪✨
