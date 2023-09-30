@@ -10,13 +10,14 @@ Before getting started, make sure you have Node.js v(18.18.0) and npm installed 
 1. Clone this repository on your local machine:
 
 ```bash
-git clone https://github.com/YourUsername/USD-to-Cryptocurrency.git
+git clone https://github.com/yeison-gonzalez/exchange-crypto-currency-app.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd USD-to-Cryptocurrency
+cd exchange-crypto-currency-app
+
 ```
 
 3. Install project dependencies using npm:
