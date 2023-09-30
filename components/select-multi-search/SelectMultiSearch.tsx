@@ -116,6 +116,7 @@ export const SelectMultiSearch: React.FC<ISelectMultiSearchProps> = (props) => {
   return (
     <Select
       {...props}
+      data-testid="select-search"
       instanceId='select-search'
       value={selectedOptions}
       isMulti

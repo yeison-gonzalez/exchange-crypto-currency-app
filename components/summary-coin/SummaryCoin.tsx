@@ -3,9 +3,9 @@ import React from 'react'
 // Hooks
 import { useTransformSymbol } from '@/hooks'
 // Components
-import { CardDetailCoin } from '.'
+import { CardDetailCoin } from '..'
 // Api
-import { fetchGetAllTickers, fetchGetTickerDetail } from '@/api/fetchApi'
+import { fetchGetAllTickers, fetchGetTickerDetail } from '@/app/api/fetchApi'
 // Models
 import { IRequest } from '@/models/Ticker'
 

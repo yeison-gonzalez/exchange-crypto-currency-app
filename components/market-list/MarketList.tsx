@@ -2,11 +2,11 @@
 import React from 'react'
 import Link from 'next/link'
 // Components
-import { MarketCard } from './'
+import { MarketCard } from '..'
 // Hooks
 import { useTransformSymbol } from '@/hooks'
 // Api
-import { fetchGetAllTickers, fetchGetMarketByCoin } from '@/api/fetchApi'
+import { fetchGetAllTickers, fetchGetMarketByCoin } from '@/app/api/fetchApi'
 // Constants
 import { MAIN_ROUTE } from '@/constants/Routes'
 

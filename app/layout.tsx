@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         </main>
         <footer className='text-center px-6 pb-6'>
           <p className='text-sm text-white font-normal'>
-            © Todos los derechos reservados 2023 / Yeison Gonzalez
+            © All rights reserved (2023 / Yeison González)
           </p>
         </footer>
       </body>

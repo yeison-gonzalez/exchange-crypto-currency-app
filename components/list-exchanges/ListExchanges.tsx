@@ -1,9 +1,9 @@
 // Libraries
 import React from 'react'
 // Components
-import { CardCryptoCurrency, SelectMultiSearch } from '.'
+import { CardCryptoCurrency, SelectMultiSearch } from '..'
 // Api
-import { fetchGetAllTickers } from '@/api/fetchApi'
+import { fetchGetAllTickers } from '@/app/api/fetchApi'
 
 export const ListExchanges: React.FC = async () => {
   const cryptos = await fetchGetAllTickers()

@@ -41,7 +41,7 @@ export const CardCryptoCurrency: React.FC<ICardCryptoCurrencyProps> = ({ data })
         </div>
       </div>
       <div className='flex flex-col justify-center items-center w-32 xs:w-16 sm:flex-1'>
-        <label className='text-center text-white font-medium w-full xs:text-xs'>$ {data?.price_usd}</label>
+        <label className='text-center text-white font-medium w-full xs:text-xs' data-testid="price-usd">$ {data?.price_usd}</label>
         <label className={`text-center ${handleIsPositive(data?.percent_change_1h) ? 'text-red-500' : 'text-green-500'} font-normal xs:text-xs w-full`}>{data?.percent_change_1h}%</label>
       </div>
       <div className='flex flex-col justify-center items-center w-28 xs:w-12'>
