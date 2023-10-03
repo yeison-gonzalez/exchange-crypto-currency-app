@@ -10,7 +10,7 @@ import { ListExchanges } from '@/components'
 // Constants
 import { MAIN_ROUTE } from '@/constants/Routes'
 // Api
-import { fetchGetAllTickers } from '@/utils/FetchApi'
+import { fetchGetAllTickers } from '@/utils/FetchServerApi'
 // Styles
 import './globals.css'
 

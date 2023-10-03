@@ -7,7 +7,7 @@ import { IRequest } from '@/models/Ticker'
 // Hooks
 import { useTransformSymbol } from '@/hooks'
 // Api
-import { fetchGetAllTickers, fetchGetTickerDetail } from '@/utils/FetchApi'
+import { fetchGetAllTickers, fetchGetTickerDetail } from '@/utils/FetchServerApi'
 
 const LayoutCurrencyPage: React.FC<{ params: IRequest, children: React.ReactNode }> = async ({ params, children }) => {
   const { coin } = params

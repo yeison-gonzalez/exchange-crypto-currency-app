@@ -3,7 +3,7 @@ import React from 'react'
 // Components
 import { MarketList } from '@/components';
 // Api
-import { fetchGetAllTickers, fetchGetMarketByCoin } from '@/utils/FetchApi';
+import { fetchGetAllTickers, fetchGetMarketByCoin } from '@/utils/FetchServerApi';
 // Hooks
 import { useTransformSymbol } from '@/hooks';
 
