@@ -13,7 +13,7 @@ import { COIN_PARAM_URL } from '@/constants/Coin';
  * @param {string} value - Value option
  * @param {string} label - Label to show in option select
  */
-interface IOption {
+export interface IOption {
   value: string
   label: string
 }
@@ -116,7 +116,6 @@ export const SelectMultiSearch: React.FC<ISelectMultiSearchProps> = (props) => {
   return (
     <Select
       {...props}
-      data-testid="select-search"
       instanceId='select-search'
       value={selectedOptions}
       isMulti

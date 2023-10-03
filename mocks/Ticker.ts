@@ -16,3 +16,8 @@ export const MOCK_TICKER = {
   tsupply: "17282687",
   msupply: "21000000"
 };
+
+export const OPTION_MOCK_TICKER = {
+  value: "90",
+  label: "BTC"
+}

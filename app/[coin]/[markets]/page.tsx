@@ -2,6 +2,10 @@
 import React from 'react'
 // Components
 import { MarketList } from '@/components';
+// Api
+import { fetchGetAllTickers, fetchGetMarketByCoin } from '@/utils/FetchApi';
+// Hooks
+import { useTransformSymbol } from '@/hooks';
 
 /**
  * Interface props markets page
@@ -14,12 +18,16 @@ interface IMarketsPageProps {
   }
 } 
 
-const MarketsPage: React.FC<IMarketsPageProps> = ({ params }) => {
+const MarketsPage: React.FC<IMarketsPageProps> = async ({ params }) => {
   const { markets } = params;
+  const { handleGetIds } = useTransformSymbol()
+
+  const cryptos = await fetchGetAllTickers()
+  const optionsMarkets = await fetchGetMarketByCoin({ id: handleGetIds(cryptos, markets) })
 
   return (
     <div>
-      <MarketList markets={markets} />
+      <MarketList data={optionsMarkets} markets={markets} />
     </div>
   )
 }

@@ -9,6 +9,8 @@ import bitcoin from '../public/bitcoin.png'
 import { ListExchanges } from '@/components'
 // Constants
 import { MAIN_ROUTE } from '@/constants/Routes'
+// Api
+import { fetchGetAllTickers } from '@/utils/FetchApi'
 // Styles
 import './globals.css'
 
@@ -19,7 +21,10 @@ export const metadata: Metadata = {
   description: 'App to get crypto currency by USD',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }): React.ReactElement {
+const HomePage: React.FC<{ children: React.ReactNode }> = async ({ children }) => {
+  const cryptos = await fetchGetAllTickers()
+  const selectOptions = cryptos?.map(crypto => ({ value: crypto.id, label: crypto.symbol })) || []
+  
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -36,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
               </div>
             </Link>
             <div className='flex flex-row gap-x-6 sm:flex-col-reverse sm:gap-y-6 xs:gap-y-6 xs:flex-col-reverse'>
-              <ListExchanges />
+              <ListExchanges data={cryptos} options={selectOptions} />
               <article>
                 {children}
               </article>
@@ -52,3 +57,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     </html>
   )
 }
+
+export default HomePage

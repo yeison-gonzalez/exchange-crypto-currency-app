@@ -3,28 +3,23 @@ import React from 'react'
 import Link from 'next/link'
 // Components
 import { MarketCard } from '..'
-// Hooks
-import { useTransformSymbol } from '@/hooks'
-// Api
-import { fetchGetAllTickers, fetchGetMarketByCoin } from '@/app/api/fetchApi'
 // Constants
 import { MAIN_ROUTE } from '@/constants/Routes'
+// Models
+import { IMarket } from '@/models/Market'
 
 /**
  * Interface props market list component
  * @constructor
+ * @param {IMarket[]} - Data markets
  * @param {string} markets - string with symbol coins to get market
  */
 interface IMarketListProps {
+  data: IMarket[]
   markets: string
 }
 
-export const MarketList: React.FC<IMarketListProps> = async ({ markets }) => {
-  const { handleGetIds } = useTransformSymbol()
-
-  const cryptos = await fetchGetAllTickers()
-  const optionsMarkets = await fetchGetMarketByCoin({ id: handleGetIds(cryptos, markets) })
-
+export const MarketList: React.FC<IMarketListProps> = ({ data, markets }) => {
   return (
     <div className='flex flex-col gap-y-6'>
       <div className='flex justify-center rounded-2xl bg-black p-5 relative xs:w-full'>
@@ -33,14 +28,14 @@ export const MarketList: React.FC<IMarketListProps> = async ({ markets }) => {
         </svg>
         <h3 className='text-white font-bold text-xl'>Markets ({ markets })</h3>
         <Link href={MAIN_ROUTE.route}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 stroke-red-600 absolute top-2 right-2">
+          <svg xmlns="http://www.w3.org/2000/svg" data-testid="close-button" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 stroke-red-600 absolute top-2 right-2">
               <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clipRule="evenodd" />
           </svg>
         </Link>
       </div>
       <div className='flex justify-center xs:w-full'>
         <div className='flex flex-col gap-y-4 rounded-2xl bg-black p-5 w-max xs:w-full justify-center items-center'>
-          {optionsMarkets?.map((market, index) => (
+          {data?.map((market, index) => (
             <MarketCard key={index} market={market} />
           ))}
         </div>
