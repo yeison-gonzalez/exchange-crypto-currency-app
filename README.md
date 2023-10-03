@@ -3,6 +3,10 @@
 
 Welcome to the USD to Cryptocurrency Converter project! With this application, you can see the instant conversion from US dollars (USD) to your favorite cryptocurrencies. This application is built using modern technologies like Next.js 13, TypeScript, React, Eslint, React Testing Library with Jest, and Tailwind CSS. Keep reading to learn how to install, run, and contribute to this exciting project!
 
+# 😎 Demo!
+
+- React Next JS frontend [https://exchange-crypto-currency-app-9t8y.vercel.app](https://exchange-crypto-currency-app-9t8y.vercel.app)
+
 # Requirements
 
 1. Node v18.18.0
